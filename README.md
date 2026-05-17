@@ -2,6 +2,11 @@
 
 An AI-powered agentic assistant designed to recommend and compare candidate hiring assessments grounded directly in the official **SHL Product Catalog**. Built with a premium, responsive UI following SHL’s visual standards, a high-performance **FastAPI** backend, and **FAISS** semantic vector search.
 
+## 🔗 Live Deployments
+
+* **Live Web Application (Frontend)**: [https://kuldeep54.github.io/shl-intel-agent/](https://kuldeep54.github.io/shl-intel-agent/)
+* **Live API Service (Backend)**: [https://shl-intel-agent.onrender.com](https://shl-intel-agent.onrender.com)
+
 ---
 
 ## 🚀 Key Features
@@ -18,7 +23,7 @@ An AI-powered agentic assistant designed to recommend and compare candidate hiri
 ## 📁 Project Structure
 
 ```text
-├── shl_frontend.html      # Modular HTML markup (layout, SVGs, structural shells)
+├── index.html             # Modular HTML markup (layout, SVGs, structural shells)
 ├── style.css              # Custom CSS stylesheet (design tokens, layout, hover effects)
 ├── app.js                 # Frontend application logic (state, API hooks, environment detection)
 ├── LICENSE                # MIT Open-Source License
@@ -68,7 +73,7 @@ python -m uvicorn main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
 ### 2. Run the Frontend
-Simply double-click or open the **`shl_frontend.html`** file in any modern browser! The page will dynamically identify that it is running locally and link to your local FastAPI backend.
+Simply double-click or open the **`index.html`** file in any modern browser! The page will dynamically identify that it is running locally and link to your local FastAPI backend.
 
 ---
 
