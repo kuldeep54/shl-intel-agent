@@ -1,0 +1,31 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Scraper output or temporary/local data files
+precompute_index.log
+*.faiss
+*.log

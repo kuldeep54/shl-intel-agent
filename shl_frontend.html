@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHL Intel | AI Assessment Recommender</title>
+<link rel="icon" href="https://www.shl.com/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+
+  <!-- NAV -->
+  <nav>
+    <div style="padding-left:14px;display:flex;align-items:center;">
+      <button class="nav-toggle" onclick="toggleSidebar()" aria-label="Close sidebar" title="Close sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <line x1="9" y1="3" x2="9" y2="21"/>
+        </svg>
+      </button>
+    </div>
+    <a class="nav-brand" href="#" style="padding-left:4px;border-left:none;">
+      <div class="nav-logo-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+          <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+        </svg>
+      </div>
+      <div class="nav-wordmark">SHL <em>Intel</em></div>
+    </a>
+    <div class="nav-sep"></div>
+    <span class="nav-tag">Assessment Recommender</span>
+    <div class="nav-right">
+      <div class="nav-turn">
+        Turn <b id="tn">0</b> / 8
+        <div class="turn-track"><div class="turn-fill" id="tf"></div></div>
+      </div>
+      <button class="nav-reset" onclick="reset()" aria-label="New conversation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+        </svg>
+        New chat
+      </button>
+    </div>
+  </nav>
+
+  <div class="body">
+
+    <!-- RAIL -->
+    <aside class="rail">
+      <div class="rail-section">
+        <span class="rail-label">Quick prompts</span>
+      </div>
+      <div class="rail-scroll">
+        <div class="prompt-item" onclick="use('Senior Java developer, works with cross-functional teams')">
+          <div class="p-dot"></div>Java developer
+        </div>
+        <div class="prompt-item" onclick="use('Sales manager with strong leadership and communication skills')">
+          <div class="p-dot"></div>Sales manager
+        </div>
+        <div class="prompt-item" onclick="use('Graduate finance analyst, quantitative and analytical skills')">
+          <div class="p-dot"></div>Graduate finance analyst
+        </div>
+        <div class="prompt-item" onclick="use('Customer service agents for inbound contact centre')">
+          <div class="p-dot"></div>Customer service
+        </div>
+        <div class="prompt-item" onclick="use('Data scientist with Python and machine learning background')">
+          <div class="p-dot"></div>Data scientist
+        </div>
+        <div class="prompt-item" onclick="use('Executive leadership and high potential programme assessment')">
+          <div class="p-dot"></div>Executive hire
+        </div>
+        <div class="prompt-item" onclick="use('Team lead managing cross-functional projects and people')">
+          <div class="p-dot"></div>Team lead
+        </div>
+        <div class="prompt-item" onclick="use('Software engineer with focus on system design and architecture')">
+          <div class="p-dot"></div>Software engineer
+        </div>
+        <div class="prompt-item" onclick="use('What is the difference between OPQ32r and Verify G+?')">
+          <div class="p-dot"></div>Compare OPQ vs Verify G+
+        </div>
+        <div class="prompt-item" onclick="use('Marketing manager with digital and analytical skills')">
+          <div class="p-dot"></div>Marketing manager
+        </div>
+        <div class="prompt-item" onclick="use('HR business partner, talent management and people skills')">
+          <div class="p-dot"></div>HR business partner
+        </div>
+        <div class="prompt-item" onclick="use('Project manager, stakeholder management and planning')">
+          <div class="p-dot"></div>Project manager
+        </div>
+      </div>
+      <div class="rail-footer">
+        <div class="live"></div>
+        Groq · LLaMA 3.3
+      </div>
+    </aside>
+
+    <!-- CHAT -->
+    <div class="chat">
+
+      <div class="chat-header">
+        <div class="ch-ava">S</div>
+        <div>
+          <div class="ch-name">SHL Assessment Agent</div>
+          <div class="ch-sub">Grounded in the full SHL catalog · stateless · max 8 turns</div>
+        </div>
+      </div>
+
+      <div class="msgs" id="msgs">
+        <div class="welcome" id="wlc">
+          <div class="wlc-eyebrow">SHL Intel</div>
+          <h1>Find the right<br><em>assessment</em></h1>
+          <p>Describe the role you're hiring for and I'll match it to the SHL catalog — clarifying when needed, recommending up to 10 assessments, and comparing on request.</p>
+          <div class="chips">
+            <div class="chip" onclick="use('Hiring a Java developer')">Java developer</div>
+            <div class="chip" onclick="use('Sales manager role')">Sales manager</div>
+            <div class="chip" onclick="use('Graduate finance analyst')">Finance graduate</div>
+            <div class="chip" onclick="use('Customer service contact centre')">Customer service</div>
+            <div class="chip" onclick="use('Data scientist with Python')">Data scientist</div>
+            <div class="chip" onclick="use('Executive leadership hire')">Executive hire</div>
+            <div class="chip" onclick="use('Compare OPQ32r vs Verify G+')">Compare assessments</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="composer">
+        <div class="comp-inner">
+          <textarea id="inp" placeholder="Describe the role you're hiring for…" rows="1"
+            oninput="grow(this)" onkeydown="ky(event)"></textarea>
+          <button class="csend" id="sbtn" disabled onclick="go()" aria-label="Send">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+        <div class="comp-hint">Only SHL catalog assessments · Groq LLaMA 3.3 · max 8 turns per session</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
