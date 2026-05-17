@@ -4,7 +4,7 @@ const API = window.location.hostname === 'localhost' ||
             window.location.hostname === '' || 
             window.location.protocol === 'file:'
   ? 'http://127.0.0.1:8000'
-  : 'https://shl-recommender-api.onrender.com';
+  : 'https://shl-intel-agent.onrender.com';
 
 let hist = [], turns = 0, busy = false;
 const inp = document.getElementById('inp');
